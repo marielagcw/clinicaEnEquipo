@@ -12,13 +12,13 @@ PASOS A SEGUIR:
    entender y manejar.
 4) Seguimos por los Repositories que extienden de JPA (estamos usando Spring Data, por eso extendemos de esta clase).
    Podríamos agregar métodos específicos si los necesitáramos, pero JPA nos ofrece varios métodos CRUD:
-    * findAll();
-    * findAll(Sort sort);
-    * findAllById(Iterable<ID> ids);
-    * saveAll(Iterable<S> entities);
-    * flush();
-    * saveAndFlush(S entity);
-    * saveAllAndFlush(Iterable<S> entities)
+    * findAll
+    * findAll
+    * findAllById
+    * saveAll
+    * flush
+    * saveAndFlush
+    * saveAllAndFlush
 5) Una vez que tenemos nuestras interfaces repositories que son las que nos traen los diferentes métodos CRUD necesitamos ir a nuestros Services para empezar a definir nuestros métodos de negocio.
 6) Importante → tenemos que usar las anotaciones para ir diciéndole a Spring qué estamos haciendo 
    * Service → @Service
@@ -27,13 +27,15 @@ PASOS A SEGUIR:
    * y cuando tengamos los controllers → @Controller
 7) Agregamos un paso opcional en los services que es hacer una interface por cada clase service para tener más flexibilidad en el sistema. En la interface le declaramos las firmas y en el service las implementamos:
 
-   Interface Service:
+  ``` 
+  Interface Service:
    void findById(Long id);
 
    Clase Service → implementa la interface Service
    void findById(Long id){
    serviceRepository.findById(id);
    }
+   ````
    
 
 
