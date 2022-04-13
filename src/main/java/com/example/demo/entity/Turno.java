@@ -80,3 +80,10 @@ public class Turno {
     }
 }
 
+/*
+* Propiedades del turno y los ids de las referencias
+* id paciente
+* id odontologo
+* y después el service arma el turno y lo manda
+*
+* */

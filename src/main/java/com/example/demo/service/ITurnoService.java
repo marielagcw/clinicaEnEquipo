@@ -11,7 +11,7 @@ public interface ITurnoService {
      ────────────── */
 
     // GUARDAR
-    TurnoDTO save(TurnoDTO turno);
+    TurnoDTO save(TurnoDTO turnoDTO);
 
     // BUSCAR TODOS
     List<TurnoDTO> findAll();
@@ -23,6 +23,6 @@ public interface ITurnoService {
     void deleteById(Integer id);
 
     // MODIFICAR POR ID
-    void update(Integer id, TurnoDTO turnoDto);
+    void update(TurnoDTO turnoDto);
 
 }

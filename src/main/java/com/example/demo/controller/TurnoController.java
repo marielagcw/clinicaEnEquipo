@@ -1,7 +1,7 @@
 package com.example.demo.controller;
 
 import com.example.demo.dto.TurnoDTO;
-import com.example.demo.service.TurnoService;
+import com.example.demo.service.impl.TurnoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -51,9 +51,9 @@ public class TurnoController {
 
     /* ---------------------------------------------------------------------*/
     // PUT → modificar turno
-    @PutMapping(path = "{id}")
-    public void putById(@PathVariable Integer id, @RequestBody TurnoDTO turnoDto) {
-        service.update(id, turnoDto);
+    @PutMapping(path = "/actualizar")
+    public void update(@RequestBody TurnoDTO turnoDto) {
+        service.update(turnoDto);
     }
 
 }

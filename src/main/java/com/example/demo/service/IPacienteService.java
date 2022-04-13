@@ -1,11 +1,11 @@
 package com.example.demo.service;
 
 import com.example.demo.entity.Paciente;
-import com.example.demo.entity.Turno;
 
 import java.util.List;
 
 public interface IPacienteService {
+
 /* ──────────────
        MÉTODOS CRUD
      ────────────── */
