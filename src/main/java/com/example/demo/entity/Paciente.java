@@ -20,7 +20,8 @@ public class Paciente {
     /* ---------------------------------------------------------------------------------------- */
     // ATRIBUTOS
     @Id
-    @GeneratedValue
+    @SequenceGenerator(name = "patient_sequence", sequenceName = "patient_sequence", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "patient_sequence")
     private Integer id;
     @Column(name = "lastname")
     private String apellido;

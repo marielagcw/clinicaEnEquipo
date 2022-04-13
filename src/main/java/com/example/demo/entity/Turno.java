@@ -13,9 +13,12 @@ public class Turno {
     /** GENERATED VALUE
     Anotación que indica cómo se genera el Id en la base de datos → lo ideal sería investigar cómo trabaja la base de datos que estaríamos usando...
     * Sabemos que H2 trabaja con un generador de id secuencial, y por defecto GeneratedValue usa SEQUENCE, pero podría ser de otra forma y podríamos usar IDENTITY, aunque hay bases de datos como protgress que no tienen generadores de id y en ese caso si quisieramos un ID autogenerado deberíamos resolverlo desde acá indicando el tipo de id que queremos generar y de qué manera...
+     * Podemos usar SequenceGenerator para que cada entidad siga su propio id, ya que si lo dejamos por defecto lo que va a suceder es que se van a ir sumando los id de manera global con cada dato que entra a la base de datos...
     */
+
     @Id
-    @GeneratedValue
+    @SequenceGenerator(name = "appointment_sequence", sequenceName = "appointment_sequence", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "appointment_sequence")
     private Integer id;
 
     @Column(name = "date")

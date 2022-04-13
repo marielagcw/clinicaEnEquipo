@@ -12,7 +12,8 @@ public class Odontologo {
 
     // ATRIBUTOS
     @Id
-    @GeneratedValue
+    @SequenceGenerator(name = "dentist_sequence", sequenceName = "dentist_sequence", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "dentist_sequence")
     private Integer id;
     @Column(name="identity_number")
     private Integer numeroMatricula;
