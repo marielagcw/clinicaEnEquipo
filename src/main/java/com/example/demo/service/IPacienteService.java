@@ -17,12 +17,12 @@ public interface IPacienteService {
     List<Paciente> findAll();
 
     // BUSCAR POR ID
-    Paciente findById(Integer id);
+    Paciente getById(Integer id);
 
     // ELIMINAR POR ID
     void deleteById(Integer id);
 
     // MODIFICAR POR ID
-    void modificar(Paciente paciente);
+    void update(Paciente paciente);
 
 }

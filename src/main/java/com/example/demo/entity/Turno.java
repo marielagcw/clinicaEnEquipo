@@ -18,12 +18,15 @@ public class Turno {
     @GeneratedValue
     private Integer id;
 
+    @Column(name = "date")
+    private LocalDateTime fechaHora;
+
+
     /** MANY TO ONE * JOIN COLUMN
      * Turnos a pacientes → varios turnos a un paciente = Many To One
      * Por defecto es eager porque solo trae un paciente
      * Nombre de la columna de la base de datos que voy a representar en mi atributo y le indico el referenceColumnName para decirle cuál es la columna de la otra tabla (en la base de datos) que estoy relacionando...
      */
-
     @ManyToOne
     @JoinColumn(name = "patient_id", nullable = false, referencedColumnName = "id")
     private Paciente paciente;
@@ -33,8 +36,7 @@ public class Turno {
     @JoinColumn(name = "dentist_id", referencedColumnName = "id")
     private Odontologo odontologo;
 
-    @Column(name = "date")
-    private LocalDateTime fechaHora;
+
 
     /* ----------------------------------------------------------------------------------------- */
 

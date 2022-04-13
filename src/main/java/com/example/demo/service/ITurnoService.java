@@ -1,6 +1,6 @@
 package com.example.demo.service;
 
-import com.example.demo.entity.Turno;
+import com.example.demo.dto.TurnoDTO;
 
 import java.util.List;
 
@@ -11,18 +11,18 @@ public interface ITurnoService {
      ────────────── */
 
     // GUARDAR
-    Turno save(Turno turno);
+    TurnoDTO save(TurnoDTO turno);
 
     // BUSCAR TODOS
-    List<Turno> findAll();
+    List<TurnoDTO> findAll();
 
     // BUSCAR POR ID
-    Turno findById(Integer id);
+    TurnoDTO getById(Integer id);
 
     // ELIMINAR POR ID
     void deleteById(Integer id);
 
     // MODIFICAR POR ID
-    void modificar(Turno turno);
+    void update(Integer id, TurnoDTO turnoDto);
 
 }

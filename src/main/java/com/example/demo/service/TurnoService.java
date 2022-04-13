@@ -1,10 +1,13 @@
 package com.example.demo.service;
 
+import com.example.demo.dto.TurnoDTO;
 import com.example.demo.entity.Turno;
 import com.example.demo.repository.ITurnoRepository;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -16,26 +19,36 @@ public class TurnoService implements ITurnoService {
      */
     @Autowired
     ITurnoRepository turnoRepository;
+    @Autowired
+    ObjectMapper mapeador;
 
    /* ──────────────
      MÉTODOS CRUD
    ────────────── */
 
     // GUARDAR
-    public Turno save(Turno turno) {
-        return turnoRepository.save(turno);
+    public TurnoDTO save(TurnoDTO turnoDto) {
+        Turno turnoAGuardar = mapeador.convertValue(turnoDto, Turno.class);
+        TurnoDTO guardado = mapeador.convertValue(turnoRepository.save(turnoAGuardar), TurnoDTO.class);
+        return guardado;
     }
     /* ----------------------------------------------------------------------------- */
 
     // BUSCAR TODOS
-    public List<Turno> findAll() {
-        return turnoRepository.findAll();
+    public List<TurnoDTO> findAll() {
+        List<TurnoDTO> listaTurnosDto = new ArrayList<>();
+        List<Turno> listaTurnos = turnoRepository.findAll();
+        for (Turno turno : listaTurnos) {
+            listaTurnosDto.add(mapeador.convertValue(turno, TurnoDTO.class));
+        }
+        return listaTurnosDto;
     }
     /* ----------------------------------------------------------------------------- */
 
     // BUSCAR POR ID
-    public Turno findById(Integer id) {
-        return turnoRepository.getById(id);
+    public TurnoDTO getById(Integer id) {
+        TurnoDTO encontrado = mapeador.convertValue(turnoRepository.getById(id), TurnoDTO.class);
+        return encontrado;
     }
     /* ----------------------------------------------------------------------------- */
 
@@ -46,9 +59,10 @@ public class TurnoService implements ITurnoService {
     /* ----------------------------------------------------------------------------- */
 
     // MODIFICAR POR ID
-    public void modificar(Turno turno) {
-        turnoRepository.save(turno);
+    public void update(Integer id, TurnoDTO turnoDto) {
+        Turno turnoAModificar = mapeador.convertValue(turnoDto, Turno.class);
     }
+
     /* ----------------------------------------------------------------------------- */
 
 }
