@@ -1,7 +1,6 @@
 package com.example.demo.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
@@ -12,8 +11,7 @@ public class Odontologo {
 
     // ATRIBUTOS
     @Id
-    @SequenceGenerator(name = "dentist_sequence", sequenceName = "dentist_sequence", allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "dentist_sequence")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @Column(name="identity_number")
     private Integer numeroMatricula;
@@ -47,17 +45,6 @@ public class Odontologo {
     }
 
     // SETTERS
-    public void setNumeroMatricula(Integer numeroMatricula) {
-        this.numeroMatricula = numeroMatricula;
-    }
-
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
 
     public void setId(Integer id) {
         this.id = id;

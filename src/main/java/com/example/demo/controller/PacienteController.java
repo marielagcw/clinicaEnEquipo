@@ -5,13 +5,13 @@ import com.example.demo.service.impl.PacienteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
 @RequestMapping(path = "/pacientes")
 @CrossOrigin(origins = "http://localhost:3000")
 public class PacienteController {
+
     // ATRIBUTOS
     @Autowired
     private PacienteService service;
@@ -28,7 +28,7 @@ public class PacienteController {
     /* ---------------------------------------------------------------------*/
 
     // GET ALL
-    @GetMapping()
+    @GetMapping
     public List<Paciente> getAll() {
         return service.findAll();
     }
@@ -37,7 +37,7 @@ public class PacienteController {
     // GET POR ID
     @GetMapping(path = "/{id}")
     public ResponseEntity<Paciente> getById(@PathVariable Integer id) {
-        Paciente pacienteResponse = service.getById(id);
+        Paciente pacienteResponse = service.findById(id);
         return ResponseEntity.ok(pacienteResponse);
     }
 
@@ -52,7 +52,8 @@ public class PacienteController {
     // PUT
     @PutMapping(path = "/{id}")
     public void putById(@PathVariable Integer id, @RequestBody Paciente paciente) {
-        service.update(id, paciente);
+        paciente.setId(id);
+        service.update(paciente);
     }
 
     /* ---------------------------------------------------------------------*/

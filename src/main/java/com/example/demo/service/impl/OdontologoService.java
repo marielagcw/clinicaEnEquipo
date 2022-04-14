@@ -2,10 +2,11 @@ package com.example.demo.service.impl;
 
 import com.example.demo.entity.Odontologo;
 import com.example.demo.repository.IOdontologoRepository;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class OdontologoService {
@@ -30,8 +31,9 @@ public class OdontologoService {
     /* ----------------------------------------------------------------------------- */
 
     // BUSCAR POR ID
-    public Odontologo getById(Integer id) {
-        return odontologoRepository.getById(id);
+    public Odontologo findById(Integer id) {
+        Odontologo odontologoEncontrado = odontologoRepository.findById(id).orElse(null);
+        return odontologoEncontrado;
     }
     /* ----------------------------------------------------------------------------- */
 
@@ -42,8 +44,8 @@ public class OdontologoService {
     /* ----------------------------------------------------------------------------- */
 
     // MODIFICAR POR ID
-    public void update(Integer id, Odontologo odontologo) {
-        odontologoRepository.save(odontologo);
+    public void update(Odontologo odontologo) {
+        odontologoRepository.saveAndFlush(odontologo);
     }
     /* ----------------------------------------------------------------------------- */
     

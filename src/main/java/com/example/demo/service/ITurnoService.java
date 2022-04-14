@@ -1,7 +1,6 @@
 package com.example.demo.service;
 
 import com.example.demo.dto.TurnoDTO;
-
 import java.util.List;
 
 public interface ITurnoService {
@@ -11,13 +10,13 @@ public interface ITurnoService {
      ────────────── */
 
     // GUARDAR
-    TurnoDTO save(TurnoDTO turnoDTO);
+    void save(TurnoDTO turnoDTO);
 
     // BUSCAR TODOS
     List<TurnoDTO> findAll();
 
     // BUSCAR POR ID
-    TurnoDTO getById(Integer id);
+    TurnoDTO findById(Integer id);
 
     // ELIMINAR POR ID
     void deleteById(Integer id);

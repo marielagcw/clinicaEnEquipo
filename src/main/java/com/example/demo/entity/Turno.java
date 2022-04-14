@@ -17,8 +17,7 @@ public class Turno {
     */
 
     @Id
-    @SequenceGenerator(name = "appointment_sequence", sequenceName = "appointment_sequence", allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "appointment_sequence")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Column(name = "date")
@@ -38,8 +37,6 @@ public class Turno {
     @ManyToOne // Por defecto es eager
     @JoinColumn(name = "dentist_id", referencedColumnName = "id")
     private Odontologo odontologo;
-
-
 
     /* ----------------------------------------------------------------------------------------- */
 
@@ -67,17 +64,6 @@ public class Turno {
         this.id = id;
     }
 
-    public void setPaciente(Paciente paciente) {
-        this.paciente = paciente;
-    }
-
-    public void setOdontologo(Odontologo odontologo) {
-        this.odontologo = odontologo;
-    }
-
-    public void setFechaHora(LocalDateTime fechaHora) {
-        this.fechaHora = fechaHora;
-    }
 }
 
 /*

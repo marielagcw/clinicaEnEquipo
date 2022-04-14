@@ -1,7 +1,6 @@
 package com.example.demo.service;
 
 import com.example.demo.entity.Paciente;
-
 import java.util.List;
 
 public interface IPacienteService {
@@ -17,7 +16,7 @@ public interface IPacienteService {
     List<Paciente> findAll();
 
     // BUSCAR POR ID
-    Paciente getById(Integer id);
+    Paciente findById(Integer id);
 
     // ELIMINAR POR ID
     void deleteById(Integer id);

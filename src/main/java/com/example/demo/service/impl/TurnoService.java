@@ -7,7 +7,6 @@ import com.example.demo.service.ITurnoService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,11 +27,9 @@ public class TurnoService implements ITurnoService {
    ────────────── */
 
     // GUARDAR
-    public TurnoDTO save(TurnoDTO turnoDto) {
+    public void save(TurnoDTO turnoDto) {
         Turno turnoAGuardar = mapper.convertValue(turnoDto, Turno.class);
-        Turno turnoGuardado = turnoRepository.save(turnoAGuardar);
-        TurnoDTO turnoGuardadoDto = mapper.convertValue(turnoGuardado, TurnoDTO.class);
-        return turnoGuardadoDto;
+        turnoRepository.save(turnoAGuardar);
     }
     /* ----------------------------------------------------------------------------- */
 
@@ -48,8 +45,8 @@ public class TurnoService implements ITurnoService {
     /* ----------------------------------------------------------------------------- */
 
     // BUSCAR POR ID
-    public TurnoDTO getById(Integer id) {
-        TurnoDTO encontrado = mapper.convertValue(turnoRepository.getById(id), TurnoDTO.class);
+    public TurnoDTO findById(Integer id) {
+        TurnoDTO encontrado = mapper.convertValue(turnoRepository.findById(id), TurnoDTO.class);
         return encontrado;
     }
     /* ----------------------------------------------------------------------------- */

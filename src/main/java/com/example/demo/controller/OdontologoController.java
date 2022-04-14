@@ -5,13 +5,13 @@ import com.example.demo.service.impl.OdontologoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
 @RequestMapping(path = "/odontologos")
 @CrossOrigin(origins = "http://localhost:3000")
 public class OdontologoController {
+
     // ATRIBUTOS
     @Autowired
     private OdontologoService service;
@@ -23,10 +23,8 @@ public class OdontologoController {
     }
     */
 
-
     /* ---------------------------------------------------------------------*/
     // POST GUARDAR
-
     /*
       RequestBody
       A mi método post necesito pasarle un body,
@@ -38,6 +36,7 @@ public class OdontologoController {
       en condiciones de ser usado por java porque Spring
       se encargó de adecuarlo.
      */
+
     /**
      * El método guardar que estoy llamando dentro del post en realidad es el método
      * que traje del OdontólogoRepository
@@ -51,7 +50,7 @@ public class OdontologoController {
 
     /* ---------------------------------------------------------------------*/
     // GET ALL
-    @GetMapping()
+    @GetMapping
     public List<Odontologo> getAll() {
         return service.findAll();
     }
@@ -74,7 +73,7 @@ public class OdontologoController {
     // GET POR ID
     @GetMapping(path = "/{id}")
     public ResponseEntity<Odontologo> getById(@PathVariable Integer id) {
-        Odontologo odontologoResponse = service.getById(id);
+        Odontologo odontologoResponse = service.findById(id);
         return ResponseEntity.ok(odontologoResponse);
     }
 
@@ -88,7 +87,13 @@ public class OdontologoController {
     /* ---------------------------------------------------------------------*/
     // PUT → modificar odontólogo
     @PutMapping(path = "{id}")
-    public void putById(@PathVariable Integer id, @RequestBody Odontologo newOdontologo) {
-        service.update(id, newOdontologo);
+    public void putById(@PathVariable Integer id, @RequestBody Odontologo odontologo) {
+        /*
+         * SET ID
+         * Desde el front tenemos un body con todos los datos menos el id por un lado y el id solo por otro (en la url)
+         * por eso lo que hacemos es setear primero el id al odontologo para mandarle un odontologo completo a la capa de persistencia
+         *  */
+        odontologo.setId(id);
+        service.update(odontologo);
     }
 }

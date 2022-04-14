@@ -1,7 +1,6 @@
 package com.example.demo.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.HashSet;
@@ -20,8 +19,7 @@ public class Paciente {
     /* ---------------------------------------------------------------------------------------- */
     // ATRIBUTOS
     @Id
-    @SequenceGenerator(name = "patient_sequence", sequenceName = "patient_sequence", allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "patient_sequence")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @Column(name = "lastname")
     private String apellido;
@@ -43,7 +41,7 @@ public class Paciente {
      * ONE TO ONE
      * Usa por defecto Eager
      * También estamos asumiendo que la relación domicilio/paciente es unidireccional y solamente podemos acceder a domicilio a través de paciente. Por eso no hay que agregar nada en nuestra entidad Domicilio.
-     * */
+     */
 
     @OneToOne(cascade = {CascadeType.REMOVE, CascadeType.REFRESH, CascadeType.PERSIST})
     @JoinColumn(name = "address_id", referencedColumnName = "id")
@@ -90,24 +88,9 @@ public class Paciente {
     /* ---------------------------------------------------------------------------------------- */
 
     // SETTERS
-    public void setDomicilio(Domicilio domicilio) {
-        this.domicilio = domicilio;
-    }
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public void setDni(String dni) {
-        this.dni = dni;
     }
 
     public void setFechaDeIngreso(LocalDate fechaDeIngreso) {

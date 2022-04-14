@@ -35,7 +35,8 @@ PASOS A SEGUIR:
    serviceRepository.findById(id);
    }
    ````
-   
+8) Hacemos los controllers, donde indicamos qué tipo de request nos estan haciendo, qué cosas necesitamos recibir (por ejemplo los datos del body) y usamos los métodos del service para que la capa de persistencia posteriormente pueda guardarlos en la base de datos. 
+
 
 
     

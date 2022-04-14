@@ -4,12 +4,10 @@ import com.example.demo.dto.TurnoDTO;
 import com.example.demo.service.impl.TurnoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
-@Controller
+@RestController
 @RequestMapping(path="/turnos")
 @CrossOrigin(origins = "http://localhost:3000")
 public class TurnoController {
@@ -29,7 +27,7 @@ public class TurnoController {
 
     /* ---------------------------------------------------------------------*/
     // GET ALL
-    @GetMapping()
+    @GetMapping
     public List<TurnoDTO> getAll() {
         return service.findAll();
     }
@@ -38,7 +36,7 @@ public class TurnoController {
     // GET POR ID
     @GetMapping(path = "/{id}")
     public ResponseEntity<TurnoDTO> getById(@PathVariable Integer id) {
-        TurnoDTO turnoResponse = service.getById(id);
+        TurnoDTO turnoResponse = service.findById(id);
         return ResponseEntity.ok(turnoResponse);
     }
 
@@ -51,8 +49,9 @@ public class TurnoController {
 
     /* ---------------------------------------------------------------------*/
     // PUT → modificar turno
-    @PutMapping(path = "/actualizar")
-    public void update(@RequestBody TurnoDTO turnoDto) {
+    @PutMapping(path = "/{id}")
+    public void update(@PathVariable Integer id, @RequestBody TurnoDTO turnoDto) {
+        turnoDto.setId(id);
         service.update(turnoDto);
     }
 

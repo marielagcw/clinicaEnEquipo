@@ -2,8 +2,8 @@ package com.example.demo.service;
 
 
 import com.example.demo.entity.Odontologo;
-
 import java.util.List;
+import java.util.Optional;
 
 public interface IOdontologoService {
 
@@ -18,7 +18,7 @@ public interface IOdontologoService {
     List<Odontologo> findAll();
 
     // BUSCAR POR ID
-    Odontologo getById(Integer id);
+    Optional<Odontologo> findById(Integer id);
 
     // ELIMINAR POR ID
     void deleteById(Integer id);
