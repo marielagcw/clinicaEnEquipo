@@ -1,0 +1,239 @@
+{
+	"info": {
+		"_postman_id": "1edce23b-e579-4186-91e3-f34d0603cd9e",
+		"name": "Clinica_odontologica_Turnos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "postTurno1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fechaHora\": \"2022-04-10T03:00:13.403\",\r\n    \"odontologo\": {\r\n        \"id\":1\r\n    },\r\n    \"paciente\": {\r\n        \"id\":1\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/turnos",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"turnos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "postTurno2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fechaHora\": \"2022-04-10T03:00:13.403\",\r\n    \"odontologo\": {\r\n        \"id\":2\r\n    },\r\n    \"paciente\": {\r\n        \"id\":2\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/turnos",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"turnos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "postTurno3",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fechaHora\": \"2022-04-10T03:00:13.403\",\r\n    \"odontologo\": {\r\n        \"id\":2\r\n    },\r\n    \"paciente\": {\r\n        \"id\":1\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/turnos",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"turnos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getTurno",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/turnos",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"turnos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getTurnoById",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/turnos/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"turnos",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "putTurnoById",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"paciente\":{\"id\":1},\r\n    \"odontologo\": {\"id\":2},\r\n    \"fechaHora\": \"2022-04-10T03:00:13.403\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/turnos/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"turnos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteTurnoById",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/turnos/3",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"turnos",
+						"3"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "https://ac468ea2-870e-4fec-9ebd-bdfab048673e.mock.pstmn.io",
+			"type": "any"
+		},
+		{
+			"key": "baseUrl",
+			"value": "localhost:8080",
+			"type": "string"
+		}
+	]
+}

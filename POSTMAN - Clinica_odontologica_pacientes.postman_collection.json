@@ -1,0 +1,207 @@
+{
+	"info": {
+		"_postman_id": "2851f9d4-93f0-402b-8c11-3c028c58b63e",
+		"name": "Clinica_odontologica_pacientes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "postPacientes1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"apellido\":\"Desconocido\", \r\n    \"nombre\":\"Eulogia\",\r\n    \"dni\":\"10.002.111\",\r\n    \"fechaDeIngreso\": \"2020-10-25\",\r\n    \"domicilio\":  {\r\n        \"calle\":\"calle1\",\r\n        \"numero\": 500,\r\n        \"localidad\": \"Rosario\",\r\n        \"provincia\": \"SF\"\r\n    },\r\n    \"email\": \"eulogia@msn.com\"\r\n   }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/pacientes",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pacientes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "postPacientes2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"apellido\": \"Pereyra\", \r\n    \"nombre\":\"Inodoro\",\r\n    \"dni\":\"10.002.000\",\r\n    \"fechaDeIngreso\": \"2020-10-25\",\r\n    \"domicilio\":  {\r\n        \"calle\":\"calle1\",\r\n        \"numero\": 500,\r\n        \"localidad\": \"Rosario\",\r\n        \"provincia\": \"SF\"\r\n    },\r\n    \"email\":\"Pereyra@hotmail.com\"\r\n   }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/pacientes",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pacientes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "postPacientes3",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"apellido\": \"Desconocido\", \r\n    \"nombre\":\"Mendieta\",\r\n    \"dni\":\"10.111.000\",\r\n    \"fechaDeIngreso\": \"2020-10-25\",\r\n    \"domicilio\":  {\r\n        \"calle\":\"calle1\",\r\n        \"numero\": 500,\r\n        \"localidad\": \"Rosario\",\r\n        \"provincia\": \"SF\"\r\n    },\r\n    \"email\": \"desconocido@yahoo.com\"\r\n   }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/pacientes",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pacientes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getPacientes",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/pacientes",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pacientes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getPacientesById",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/pacientes/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pacientes",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "putPacientes",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"apellido\": \"Fontanarrosa\",\r\n    \"nombre\": \"Eulogia\",\r\n    \"dni\": \"10.002.111\",\r\n    \"fechaDeIngreso\": \"2020-10-25\",\r\n    \"domicilio\": {\r\n        \"calle\": \"calle1\",\r\n        \"numero\": 500,\r\n        \"localidad\": \"Rosario\",\r\n        \"provincia\": \"SF\",\r\n        \"id\":1\r\n    },\r\n    \"email\": \"chirusa@msn.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/pacientes/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pacientes",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deletePacientes",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/pacientes/3",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pacientes",
+						"3"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

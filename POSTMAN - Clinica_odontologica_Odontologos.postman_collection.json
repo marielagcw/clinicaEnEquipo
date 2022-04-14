@@ -1,0 +1,266 @@
+{
+	"info": {
+		"_postman_id": "c81ab1d4-a008-40e3-b6b6-3d5fb374349c",
+		"name": "Clinica_odontologica_Odontologos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "postOdontologos1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"numeroMatricula\": 1,\r\n    \"apellido\": \"Desconocido\",\r\n    \"nombre\": \"Mafalda\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/odontologos",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"odontologos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "postOdontologos2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"numeroMatricula\": 2,\r\n    \"apellido\": \"Chirusi\",\r\n    \"nombre\": \"Susanita\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/odontologos",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"odontologos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "postOdontologos3",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"numeroMatricula\": 3,\r\n    \"apellido\": \"Goreiro\",\r\n    \"nombre\": \"Manolito\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/odontologos",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"odontologos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "postOdontologos4",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"numeroMatricula\": 4,\r\n    \"apellido\": \"Desconocido2\",\r\n    \"nombre\": \"Libertad\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/odontologos",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"odontologos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getOdontologos",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/odontologos",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"odontologos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getOdontologosById",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/odontologos/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"odontologos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "putOdontologoById",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"numeroMatricula\": 1000,\r\n    \"apellido\": \"Quino\",\r\n    \"nombre\": \"Mafalda\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/odontologos/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"odontologos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteOdontologoById",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/odontologos/3",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"odontologos",
+						"3"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "https://ac468ea2-870e-4fec-9ebd-bdfab048673e.mock.pstmn.io",
+			"type": "any"
+		},
+		{
+			"key": "baseUrl",
+			"value": "localhost:8080",
+			"type": "string"
+		}
+	]
+}
